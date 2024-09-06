@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+	</head>
+<body>
+		<h3>별 문자 출력하기</h3>
+		<script>
+		function sTar(obj) {
+			for(let i = 0; i < obj; i++) {
+				for(let j = 0; j < i; j++) {
+					document.write('*');
+				}
+				document.write('<br>');
+			}
+		}
+			let temp = prompt("정수를 입력하세요.");
+			temp = parseInt(temp);
+			if(isNaN(temp)) {
+				document.write("입력 오류 입니다.");
+				window.close();
+			}
+			else {
+				sTar(temp);
+			}
+		</script>
+</body>
+</html>
