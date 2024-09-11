@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>로그인 폼 만들기</title>
+		<script>
+			function checkFilled(obj) {
+				if (obj.value == "") {
+					obj.classList.add("error");
+					obj.focus();
+				}
+				else {
+					obj.classList.remove("error")
+				}
+			};
+		
+			function showLogin(e) {
+				var userName = document.getElementById("userName");
+				var userPassword = document.getElementById("userPassword");
+				if(e.keyCorde == 13) {
+					userName.innerHTML = "입력값 : " + userName;
+				}
+			};
+			
+			function newPage() {
+				let link = 'https://naver.com';
+				window.location.href = link;
+			}
+			
+			document.onkeyup = function (e) {
+				let keyCode = e.keyCode;
+				if (keyCode == 13) newPage();
+			}
+		</script>
+	</head>
+	<body>
+		<div class="login-wrapper">
+			<h2>Login</h2>
+			<form method="post" action="" id="login-form">
+				<input type="text" name="userName" placeholder="ID" onblur="checkFilled(this)">
+				<input type="password" name="userPassword" placeholder="Password" onkeypress="showLogin(event)">
+				<label for="remember-check">
+					<input type="checkbox" id="remember-check"> 아이디 저장하기			
+				</label>
+				<input type="button" onclick="newPage()" value="login">
+			</form>
+		</div>
+	</body>
+</html>
